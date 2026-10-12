@@ -1,7 +1,7 @@
 import { describe, it } from "node:test";
 import assert from "node:assert";
 import { PublicKey } from "@solana/web3.js";
-import { SlippageEvaluator, SolanaLiquidityGuardClient } from "../src/index";
+import { SlippageEvaluator, SolanaLiquidityGuardClient, VolatilityOracleTracker } from "../src/index";
 
 describe("Solana Liquidity Guard Test Suite", () => {
   it("should evaluate healthy liquidity within safe tolerance", () => {
@@ -37,5 +37,17 @@ describe("Solana Liquidity Guard Test Suite", () => {
     const checkDuringCooldown = client.evaluatePoolState(10000n, 10000n, 1100);
     assert.strictEqual(checkDuringCooldown.isHealthy, false);
     assert.match(checkDuringCooldown.reason || "", /cooldown slot remaining 100/);
+  });
+
+  it("should calculate rolling TWAP and prune stale samples", () => {
+    const tracker = new VolatilityOracleTracker(1000);
+    tracker.recordSample(100n, 1000);
+    tracker.recordSample(200n, 1500);
+    tracker.recordSample(300n, 1800);
+    assert.strictEqual(tracker.calculateRollingTwap(), 200n);
+
+    // Prune sample at 1000 when advancing to 2500 (cutoff = 1500)
+    tracker.recordSample(250n, 2500);
+    assert.strictEqual(tracker.getSampleCount(), 3); // 200n, 300n, 250n
   });
 });
