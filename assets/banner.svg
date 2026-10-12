@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d"/>
+      <stop offset="50%" stop-color="#0d1424"/>
+      <stop offset="100%" stop-color="#050811"/>
+    </linearGradient>
+    <linearGradient id="solGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9945FF"/>
+      <stop offset="100%" stop-color="#14F195"/>
+    </linearGradient>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M 36 0 L 0 0 0 36" fill="none" stroke="#1e293b" stroke-width="0.8" opacity="0.4"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="380" fill="url(#bg)"/>
+  <rect width="1200" height="380" fill="url(#grid)"/>
+
+  <circle cx="200" cy="190" r="140" fill="#9945FF" opacity="0.12" filter="blur(50px)"/>
+  <circle cx="1000" cy="190" r="140" fill="#14F195" opacity="0.1" filter="blur(50px)"/>
+
+  <!-- Logo Icon -->
+  <g transform="translate(100, 100)">
+    <rect x="0" y="0" width="130" height="130" rx="28" fill="#131b2e" stroke="url(#solGrad)" stroke-width="3"/>
+    <path d="M 35 48 L 95 48 L 80 64 L 20 64 Z" fill="url(#solGrad)"/>
+    <path d="M 20 78 L 80 78 L 95 94 L 35 94 Z" fill="url(#solGrad)"/>
+    <path d="M 35 108 L 95 108 L 80 124 L 20 124 Z" fill="url(#solGrad)"/>
+  </g>
+
+  <!-- Title & Subtitle -->
+  <text x="265" y="155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="40" font-weight="800" fill="#ffffff" letter-spacing="-0.5">
+    Solana Anchor Vault Stream
+  </text>
+  <text x="265" y="198" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="19" font-weight="400" fill="#94a3b8">
+    Time-Weighted Streaming Payment &amp; Linear Vesting Vault Protocol
+  </text>
+
+  <!-- Badges -->
+  <g transform="translate(265, 235)">
+    <rect x="0" y="0" width="120" height="30" rx="15" fill="#1e293b" stroke="#9945FF" stroke-width="1.2"/>
+    <text x="60" y="20" font-family="monospace" font-size="12" font-weight="600" fill="#9945FF" text-anchor="middle">Solana Mainnet</text>
+
+    <rect x="135" y="0" width="125" height="30" rx="15" fill="#1e293b" stroke="#14F195" stroke-width="1.2"/>
+    <text x="197" y="20" font-family="monospace" font-size="12" font-weight="600" fill="#14F195" text-anchor="middle">Anchor 0.30.1</text>
+
+    <rect x="275" y="0" width="125" height="30" rx="15" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2"/>
+    <text x="337" y="20" font-family="monospace" font-size="12" font-weight="600" fill="#38bdf8" text-anchor="middle">SPL Token v2</text>
+
+    <rect x="415" y="0" width="115" height="30" rx="15" fill="#1e293b" stroke="#f59e0b" stroke-width="1.2"/>
+    <text x="472" y="20" font-family="monospace" font-size="12" font-weight="600" fill="#f59e0b" text-anchor="middle">Apache-2.0</text>
+  </g>
+</svg>

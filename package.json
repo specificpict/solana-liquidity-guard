@@ -1,0 +1,31 @@
+{
+  "name": "@specificpict/solana-liquidity-guard",
+  "version": "1.0.0",
+  "description": "Solana Anchor On-Chain Liquidity Protection Vault & Slippage Circuit Breaker Protocol",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "node --test dist/tests/*.js"
+  },
+  "keywords": [
+    "solana",
+    "anchor",
+    "web3",
+    "defi",
+    "circuit-breaker",
+    "liquidity-guard"
+  ],
+  "author": "specificpict <specificpict@users.noreply.github.com>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.30.1",
+    "@solana/web3.js": "^1.95.3",
+    "bn.js": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/bn.js": "^5.1.5",
+    "@types/node": "^20.14.0",
+    "typescript": "^5.4.5"
+  }
+}
